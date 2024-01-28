@@ -1,0 +1,155 @@
+{
+  "licenseKey": "695aecfa-0329-41a2-b44f-c2e8fe28241d",
+  "platform": {
+    "uuid": "reactive-trader-credit-<ENV_NAME>",
+    "name": "Reactive Trader® Credit <ENV_SUFFIX>",
+    "applicationIcon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+    "defaultWindowOptions": {
+      "contextMenu": true,
+      "fdc3InteropApi": "1.2",
+      "frame": false,
+      "applicationIcon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+      "url": "<BASE_URL>/openfin-sub-window-frame"
+    },
+    "defaultViewOptions": {
+      "contextMenu": true,
+      "fdc3InteropApi": "1.2"
+    }
+  },
+  "runtime": {
+    "version": "<OPENFIN_RUNTIME>",
+    "arguments": "--remote-debugging-port=9091"
+  },
+  "services": [{ "name": "notifications" }],
+  "splashScreenImage": "<BASE_URL>/static/media/splash.png",
+  "shortcut": {
+    "company": "Adaptive Financial Consulting",
+    "icon": "<BASE_URL>/static/media/reactive-trader.ico",
+    "name": "Reactive Trader® Credit<ENV_SUFFIX>"
+  },
+  "snapshot": {
+    "windows": [
+      {
+        "applicationIcon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+        "autoShow": true,
+        "defaultWidth": 1280,
+        "defaultHeight": 900,
+        "minWidth": 800,
+        "minHeight": 600,
+        "defaultCentered": true,
+        "resizable": true,
+        "maximizable": true,
+        "saveWindowState": true,
+        "frame": false,
+        "shadow": true,
+        "accelerator": {
+          "devtools": true,
+          "reload": true,
+          "reloadIgnoringCache": true,
+          "zoom": true
+        },
+        "customContext": {
+          "owningWindowName": "Reactive-Trader-Credit"
+        },
+        "url": "<BASE_URL>/openfin-window-frame?app=CREDIT",
+        "name": "Reactive-Trader-Credit",
+        "layout": {
+          "settings": {
+            "blockedPopoutsThrowError": false,
+            "closePopoutsOnUnload": true,
+            "constrainDragToContainer": false,
+            "hasHeaders": false,
+            "popoutWholeStack": false,
+            "reorderEnabled": false,
+            "reorderOnTabMenuClick": true,
+            "responsiveMode": "always",
+            "selectionEnabled": true,
+            "showCloseIcon": false,
+            "showMaximiseIcon": false,
+            "showPopoutIcon": true,
+            "tabControlOffset": 10,
+            "tabOverlapAllowance": 0
+          },
+          "content": [
+            {
+              "type": "row",
+              "id": "mainRow",
+              "isClosable": true,
+              "title": "",
+              "content": [
+                {
+                  "type": "column",
+                  "isClosable": true,
+                  "title": "",
+                  "width": 80,
+                  "content": [
+                    {
+                      "type": "stack",
+                      "width": 50,
+                      "height": 50,
+                      "isClosable": true,
+                      "title": "",
+                      "activeItemIndex": 0,
+                      "content": [
+                        {
+                          "type": "component",
+                          "componentName": "view",
+                          "componentState": {
+                            "url": "<BASE_URL>/credit-rfqs",
+                            "name": "RFQs"
+                          },
+                          "isClosable": true,
+                          "title": "Credit RFQs"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "stack",
+                      "header": {},
+                      "isClosable": true,
+                      "title": "",
+                      "activeItemIndex": 0,
+                      "height": 50,
+                      "content": [
+                        {
+                          "type": "component",
+                          "componentName": "view",
+                          "componentState": {
+                            "url": "<BASE_URL>/credit-blotter",
+                            "name": "Credit-Blotter"
+                          },
+                          "isClosable": true,
+                          "title": "Credit Blotter"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "stack",
+                  "width": 30,
+                  "height": 100,
+                  "isClosable": true,
+                  "title": "",
+                  "activeItemIndex": 0,
+                  "content": [
+                    {
+                      "type": "component",
+                      "componentName": "view",
+                      "componentState": {
+                        "url": "<BASE_URL>/credit-new-rfq",
+                        "name": "New-RFQ"
+                      },
+                      "isClosable": true,
+                      "title": "Credit New RFQ"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "licenseKey": "695aecfa-0329-41a2-b44f-c2e8fe28241d",
+  "platform": {
+    "uuid": "reactive-trader-fx-<ENV_NAME>",
+    "name": "Reactive Trader® FX <ENV_SUFFIX>",
+    "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+    "url": "<BASE_URL>",
+    "providerUrl": "<BASE_URL>/openfinContainerProvider.html",
+    "defaultWindowOptions": {
+      "contextMenu": true,
+      "fdc3InteropApi": "1.2",
+      "frame": false,
+      "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+      "url": "<BASE_URL>/openfin-sub-window-frame"
+    },
+    "defaultViewOptions": {
+      "contextMenu": true,
+      "fdc3InteropApi": "1.2"
+    }
+  },
+  "runtime": {
+    "version": "<OPENFIN_RUNTIME>",
+    "arguments": "--remote-debugging-port=9091"
+  },
+  "services": [{ "name": "notifications" }],
+  "splashScreenImage": "<BASE_URL>/static/media/splash.png",
+  "shortcut": {
+    "company": "Adaptive Financial Consulting",
+    "icon": "<BASE_URL>/static/media/reactive-trader.ico",
+    "name": "Reactive Trader FX®<ENV_SUFFIX>"
+  },
+  "appAssets": [
+    {
+      "src": "<BASE_URL>/plugin/add-in.zip",
+      "alias": "excel-api-addin",
+      "forceDownload": true,
+      "version": "2.0.0"
+    }
+  ],
+  "snapshot": {
+    "windows": [
+      {
+        "icon": "<BASE_URL>/static/media/reactive-trader-icon-256x256.png",
+        "autoShow": true,
+        "defaultWidth": 1280,
+        "defaultHeight": 900,
+        "minWidth": 800,
+        "minHeight": 600,
+        "defaultCentered": true,
+        "resizable": true,
+        "maximizable": true,
+        "saveWindowState": true,
+        "frame": false,
+        "shadow": true,
+        "_comment": "Openfin Excel API preloaded below + added in appAssets (not included in standard OpenFin package)",
+        "preload": [
+          {
+            "url": "<BASE_URL>/plugin/service-loader.js"
+          },
+          {
+            "url": "<BASE_URL>/plugin/fin.desktop.Excel.js"
+          }
+        ],
+        "contextMenu": true,
+        "accelerator": {
+          "devtools": true,
+          "reload": true,
+          "reloadIgnoringCache": true,
+          "zoom": true
+        },
+        "customContext": {
+          "owningWindowName": "Reactive-Trader-FX"
+        },
+        "url": "<BASE_URL>/openfin-window-frame?app=FX",
+        "name": "Reactive-Trader-FX",
+        "layout": {
+          "settings": {
+            "blockedPopoutsThrowError": false,
+            "closePopoutsOnUnload": true,
+            "constrainDragToContainer": false,
+            "hasHeaders": false,
+            "popoutWholeStack": false,
+            "reorderEnabled": false,
+            "reorderOnTabMenuClick": true,
+            "responsiveMode": "always",
+            "selectionEnabled": true,
+            "showCloseIcon": false,
+            "showMaximiseIcon": false,
+            "showPopoutIcon": true,
+            "tabControlOffset": 10,
+            "tabOverlapAllowance": 0
+          },
+          "content": [
+            {
+              "type": "row",
+              "id": "mainRow",
+              "isClosable": true,
+              "contextMenu": true,
+              "title": "",
+              "content": [
+                {
+                  "type": "column",
+                  "isClosable": true,
+                  "title": "",
+                  "width": 80,
+                  "content": [
+                    {
+                      "type": "stack",
+                      "height": 50,
+                      "isClosable": true,
+                      "title": "",
+                      "activeItemIndex": 0,
+                      "content": [
+                        {
+                          "type": "component",
+                          "componentName": "view",
+                          "contextMenu": true,
+                          "componentState": {
+                            "url": "<BASE_URL>/fx-tiles",
+                            "name": "Tiles"
+                          },
+                          "isClosable": true,
+                          "title": "FX Spot Tiles"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "stack",
+                      "header": {},
+                      "isClosable": true,
+                      "title": "",
+                      "activeItemIndex": 0,
+                      "height": 50,
+                      "content": [
+                        {
+                          "type": "component",
+                          "componentName": "view",
+                          "componentState": {
+                            "url": "<BASE_URL>/fx-blotter",
+                            "name": "FX Blotter"
+                          },
+                          "isClosable": true,
+                          "title": "FX Blotter"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "stack",
+                  "width": 30,
+                  "isClosable": true,
+                  "title": "",
+                  "activeItemIndex": 0,
+                  "content": [
+                    {
+                      "type": "component",
+                      "componentName": "view",
+                      "componentState": {
+                        "url": "<BASE_URL>/fx-analytics",
+                        "name": "Analytics"
+                      },
+                      "isClosable": true,
+                      "title": "FX Analytics"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
