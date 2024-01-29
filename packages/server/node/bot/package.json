@@ -56,7 +56,7 @@
     "@types/dialogflow": "^0.9.4",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.4",
-    "@types/node": "^11.9.3",
+    "@types/node": "^11.15.54",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/uuid": "^3.4.4",
